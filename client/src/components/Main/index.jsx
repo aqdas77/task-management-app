@@ -54,7 +54,7 @@ const Main = () => {
     e.preventDefault();
 
     try {
-      const url = "http://localhost:8080/api/tasks";
+      const url = "https://react-task-app.onrender.com/api/tasks";
       const token = localStorage.getItem("token");
 
       const res = await axios.post(url, data, {
@@ -85,7 +85,7 @@ const Main = () => {
   const fetchTasks = () => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8080/api/tasks", {
+      .get("https://react-task-app.onrender.com/api/tasks", {
         headers: {
           Authorization: `Bearer ${token}`, // Include the token in the headers
         },
@@ -130,7 +130,7 @@ const Main = () => {
     if (!selectedTaskForEdit) return;
 
     try {
-      const url = `http://localhost:8080/api/tasks/${selectedTaskForEdit._id}`;
+      const url = `https://react-task-app.onrender.com/api/tasks/${selectedTaskForEdit._id}`;
       const token = localStorage.getItem("token");
 
       const res = await axios.put(url, selectedTaskForEdit, {
@@ -158,7 +158,7 @@ const Main = () => {
     if (!selectedTaskToDelete) return;
 
     try {
-      const url = `http://localhost:8080/api/tasks/${selectedTaskToDelete._id}`;
+      const url = `https://react-task-app.onrender.com/api/tasks/${selectedTaskToDelete._id}`;
       const token = localStorage.getItem("token");
 
       const res = await axios.delete(url, {
